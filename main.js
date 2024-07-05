@@ -83,16 +83,12 @@ addContact : function (aggiugiContatto, aggiungiTelefono ){
 
 // Modifica contatto
 
-modifyContact : function (nomeMod, telefonoMod) {
-    
-    
-    
-}
+modifyContact : function (contattoDaModificare) {
+    let modifica = this.contatti.findIndex((contact) => contact.nome === contattoDaModificare);
+    if (modifica){
+        
 
-let arr= [ ]
-// startIndex(inclusive) and endIndex(exclusive)
-arr.fill (element ,startIndex,endIndex);
-console.log(arr);
+
 
 
 };
