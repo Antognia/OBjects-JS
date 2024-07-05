@@ -83,10 +83,16 @@ addContact : function (aggiugiContatto, aggiungiTelefono ){
 
 // Modifica contatto
 
-modifyContact : function (params) {
+modifyContact : function (nomeMod, telefonoMod) {
+    
+    
     
 }
 
+let arr= [ ]
+// startIndex(inclusive) and endIndex(exclusive)
+arr.fill (element ,startIndex,endIndex);
+console.log(arr);
 
 
 };
