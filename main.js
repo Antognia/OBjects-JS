@@ -86,7 +86,7 @@ addContact : function (aggiugiContatto, aggiungiTelefono ){
 modifyContact : function (nome, nuovoNumero) {
     let modifica = this.contatti.find((contact) => contact.nome === nome);
     if (modifica){
-this.contatti[modifica].phone = nuovoNumero;
+modifica.phone = nuovoNumero;
      console.log(`Telefono di ${nome} modificato! `)}
     else{
         console.log(`${nome} non presente in agenda!`)};
