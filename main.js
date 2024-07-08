@@ -102,3 +102,58 @@ agenda.showContacts();
 agenda.addContact('Fabiana', 6271093);
 agenda.showContacts();
 agenda.modifyContact('Maria', 'Sandra');
+
+
+
+
+// Selfwork Oggetti Nr. 3 
+
+let bowling = {
+    players: [
+        {'name': 'Livio', 'scores': []},
+        {'name': 'Paola', 'scores': []},
+        {'name': 'Filippo', 'scores': []},
+        {'name': 'Giuseppe', 'scores': []}
+    ],
+    
+
+    // Visualizzare giocatori e Punteggi
+    visualizza : function(){
+    console.log(this.players);
+},
+    
+ // Creare Punteggio casuale 
+punteggi : function(){
+this.players.forEach((player) => let casuale = Math.floor(Math.random() * (10 - 1 +1) + 1));
+players.scores.push(casuale);
+    
+},
+ // Sommare i punteggi dei giocatori  
+    somma : function(){
+        this.players.forEach((player) => let sum = player.scores.reduce((acc,cur) => acc + cur, 0);
+        console.log(`La somma dei punteggi di ${player.name} è = ${sum} `);
+
+},
+
+// Oridnare Giocatori in Ordine Decrescente
+    ordDec : function(){
+         this.players.forEach((player) => let ordine = player.sort((a, b) => a - b);
+        
+     
+    
+};
+
+
+// Ciclo funzione per 10 volte
+for (let i = 0; i <= 10; i++){
+bowling.punteggi();
+};
+
+
+
+    
+// Chiamo funzione    
+bowling.visualizza();
+bowling.somma();
+bowling.visualizza();
+
