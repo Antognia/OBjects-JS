@@ -83,13 +83,13 @@ addContact : function (aggiugiContatto, aggiungiTelefono ){
 
 // Modifica contatto
 
-modifyContact : function (contattoDaModificare) {
-    let modifica = this.contatti.findIndex((contact) => contact.nome === contattoDaModificare);
-    if (modifica){
-        
-
-
-
+modifyContact : function (nomePresente, modificaNome) {
+    let modifica = this.contatti.findIndex((contact) => contact.nome === nomePresente);
+    if (modifica !== -1){
+this.contatti[modifica].nome = modificaNome;
+     console.log(`Contatto modificato in : ${modificaNome} `)}
+    else{
+        console.log(`${nomePresente} non presente in agenda!`)};
 
 };
 
@@ -101,3 +101,4 @@ agenda.removeContact('Sara');
 agenda.showContacts();
 agenda.addContact('Fabiana', 6271093);
 agenda.showContacts();
+agenda.modifyContact('Maria', 'Sandra');
