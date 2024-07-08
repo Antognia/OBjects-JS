@@ -83,13 +83,13 @@ addContact : function (aggiugiContatto, aggiungiTelefono ){
 
 // Modifica contatto
 
-modifyContact : function (nomePresente, modificaNome) {
-    let modifica = this.contatti.findIndex((contact) => contact.nome === nomePresente);
-    if (modifica !== -1){
-this.contatti[modifica].nome = modificaNome;
-     console.log(`Contatto modificato in : ${modificaNome} `)}
+modifyContact : function (nome, nuovoNumero) {
+    let modifica = this.contatti.find((contact) => contact.nome === nome);
+    if (modifica){
+this.contatti[modifica].phone = nuovoNumero;
+     console.log(`Telefono di ${nome} modificato! `)}
     else{
-        console.log(`${nomePresente} non presente in agenda!`)};
+        console.log(`${nome} non presente in agenda!`)};
 
 };
 
