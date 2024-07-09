@@ -124,14 +124,14 @@ let bowling = {
     
  // Creare Punteggio casuale 
 punteggi : function(){
-this.players.forEach((player) => let casuale = Math.floor(Math.random() * (10 - 1 +1) + 1));
-players.scores.push(casuale);
+this.players.forEach((player) => {let casuale = Math.floor(Math.random() * (10 - 1 +1) + 1));
+players.scores.push(casuale)};
     
 },
  // Sommare i punteggi dei giocatori  
     somma : function(){
-        this.players.forEach((player) => let sum = player.scores.reduce((acc,cur) => acc + cur, 0);
-        console.log(`La somma dei punteggi di ${player.name} è = ${sum} `);
+        this.players.forEach((player) => {let sum = player.scores.reduce((acc,cur) => acc + cur, 0)};
+        console.log(`La somma dei punteggi di ${player.name} è ${sum} `);
 
 },
 
