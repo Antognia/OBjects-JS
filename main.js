@@ -117,53 +117,60 @@ let bowling = {
     ],
     
 
+
+    // Crea un Nuovo Giocatore
+    
+    creaNuovoGiocatore : function (nome) {
+    let nuovoGiocatore = {
+        'name' : nome,
+        'scores' : []
+    };
+    this.players.push(nuovoGiocatore);
+
+    // ciclo per 10 Punteggi
+for (let i = 0; i < 10; i++){
+    let caso = Math.floor(Math.random() * (10 - 1 + 1) + 1); 
+    nuovoGiocatore.scores.push(caso);
+    };
+
+    },
+    
+
     // Visualizzare giocatori e Punteggi
     visualizza : function(){
     console.log(this.players);
 },
     
+
  // Creare Punteggio casuale 
-punteggi : function(){
-this.players.forEach((player) => {let casuale = Math.floor(Math.random() * (10 - 1 +1) + 1);
-players.scores.push(casuale);
-                                 });
+ punteggi: function(){
+    this.players.forEach((player) => { let casuale = Math.floor(Math.random() * (10 - 1 + 1) + 1); player.scores.push(casuale);
+
+    });
+},
+
+// Creare Ordine Classifica punteggi 
+
+sommaOrdina : function () {
+    this.players.forEach((player) => { player.totale = player.scores.reduce((acc, cur) => acc + cur);
+        this.players.sort((a,b) => a.totale - b.totale );
+        
+    });
+
+  
     
 },
- // Sommare i punteggi dei giocatori  
-    somma : function(){
-        this.players.forEach((player) => {let sum = player.scores.reduce((acc,cur) => acc + cur, 0);
-        console.log(`La somma dei punteggi di ${player.name} è ${sum} `);
-                                         });
 
-},
 
-// Oridinare Giocatori in Ordine Decrescente
-    ordDec : function(){
-         this.players.forEach((player) => {let ordine = player.sort((a, b) => a - b)
-                                          });
 };
-
- // Sommare i punteggi dei giocatori  
-    somma : function(){
-        this.players.forEach((player) => {let sum = player.scores.reduce((acc,cur) => acc + cur, 0);
-        console.log(`La somma dei punteggi di ${player.name} è ${sum} `);
-        this.players.forEach((player) => let ordine = player.sort((a, b) => a - b)
-                                          
-
-                                         });
-
-},
-
-
-         
-
+    
 
 
 
 
 
 // Ciclo funzione per 10 volte
-for (let i = 0; i <= 10; i++){
+for (let i = 0; i < 10; i++){
 bowling.punteggi();
 };
 
@@ -172,7 +179,7 @@ bowling.punteggi();
     
 // Chiamo funzione    
 bowling.visualizza();
-bowling.somma();
+bowling.creaNuovoGiocatore('Sandro');
+bowling.sommaOrdina();
 bowling.visualizza();
-bowling.ordDec();
 
