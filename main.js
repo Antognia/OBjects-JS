@@ -24,14 +24,6 @@ persona.saluto();
 
 // Selfwork Oggetti 2 //
 
-// Crea un oggetto agenda con una proprietà che comprenda una lista di contatti con un nome e un numero di telefono, ed abbia diverse funzionalità tra cui:
-// mostrare tutti i contatti dell’agenda
-// mostrare un singolo contatto
-// eliminare un contatto dall’agenda
-// aggiungere un nuovo contatto
-// modificare un contatto esistente  
-
-
 let agenda = {
     contatti : [
         {nome : 'Marco',
@@ -83,6 +75,12 @@ addContact : function (aggiugiContatto, aggiungiTelefono ){
 
 // Modifica contatto
 
+modifyContact : function (params) {
+    
+},
+
+// Modifica contatto
+
 modifyContact : function (nome, nuovoNumero) {
     let modifica = this.contatti.find((contact) => contact.nome === nome);
     if (modifica){
@@ -91,6 +89,12 @@ modifica.phone = nuovoNumero;
     else{
         console.log(`${nome} non presente in agenda!`)};
 
+},
+
+
+
+
+
 };
 
 
@@ -98,10 +102,10 @@ modifica.phone = nuovoNumero;
 agenda.showContacts();
 agenda.seeContact('Marco');
 agenda.removeContact('Sara');
+agenda.addContact('Fabiana', 88776655)
+agenda.modifyContact('Maria', 2314515);
 agenda.showContacts();
-agenda.addContact('Fabiana', 6271093);
-agenda.showContacts();
-agenda.modifyContact('Maria', 'Sandra');
+
 
 
 
