@@ -159,12 +159,21 @@ sommaOrdina : function () {
     this.players.forEach((player) => { player.totale = player.scores.reduce((acc, cur) => acc + cur);
         this.players.sort((a,b) => a.totale - b.totale );
         
-    });
-
-  
-    
+    });    
 },
 
+    classifica : function(){
+    this.players.forEach(player => {
+    console.log(`${player.name}: ${player.totale}`);
+});
+},
+
+winner : function(){   
+let vincitore = this.players.reduce((max, c) => max.totale > c.totale ? max : c)
+console.log(`IL Vincitore è ${vincitore.name} con un punteggio di ${vincitore.totale}`);
+},
+
+    
 
 };
     
@@ -186,4 +195,6 @@ bowling.visualizza();
 bowling.creaNuovoGiocatore('Sandro');
 bowling.sommaOrdina();
 bowling.visualizza();
+bowling.classifica();
+bowling.winner();
 
